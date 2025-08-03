@@ -1,0 +1,28 @@
+" keep at least 5 lines of context visible above and below the cursor at all times
+set scrolloff=5
+
+" makes the search update as you type. So instead of waiting until you press <Enter>, it highlights the first match immediately and updates it with each character you type in the search.
+set incsearch
+
+" Use system clipboard instead of the unnamed register
+set clipboard+=unnamedplus
+
+let mapleader = " "
+
+" Use \c to comment (toggle) the selected lines in Java
+vmap <leader>c <Plug>CommentaryLine
+nmap <leader>c <Plug>CommentaryLine
+
+" Delete without yanking (to the black hole register)
+nmap <leader>d "_d
+vmap <leader>d "_d
+
+" Make Ctrl+C behave like Escape in insert mode
+imap <C-c> <Esc>
+
+nnoremap <leader>gb /(<CR>
+nnoremap <leader>gc /{<CR>
+nnoremap <leader>gi :action GotoImplementation<CR>
+
+vnoremap J :move '>+1<CR>gv=gv
+vnoremap K :move '<-2<CR>gv=g
